@@ -1,0 +1,214 @@
+:root {
+    --color_claro: #fff;
+    --color_medio: #3A3B3B;
+    --color_fuerte: #030504;
+    --red: #FD0413;
+    --darkred: #9E010B;
+    --orange: #FD5303;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: normal;
+}
+
+body {
+    padding: 50px;
+    background: linear-gradient(to right, #56ccf2, #2f80ed);
+    font-family: 'Roboto', sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+input {
+    -webkit-appearance: none;
+}
+
+button, input {
+    border: none;
+    background: none;
+    outline: none;
+    color: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* variables */
+
+.top-banner {
+    color: var(--color_fuerte);
+}
+
+.titulo {
+    font-size: 64px;
+    font-weight: bold;
+    letter-spacing: 0.32px;
+    padding: 0 0 30px 0;
+}
+
+.fa-sun {
+    color: yellow;
+}
+
+.fa-sun:hover {
+    color: #9C9506;
+    transition: 0.5s ease;
+}
+
+.top-banner form {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.top-banner form input {
+    font-size: 32px;
+    border-bottom: 1px solid;
+    height: 40px;
+    padding: 5px 0px 10px;
+}
+
+.top-banner form button {
+    font-size: 16px;
+    font-weight: bold;
+    background: var(--red);
+    color: var(--color_claro);
+    height: 40px;
+    width: 80px;
+    border-radius: 3px;
+    margin-left: 5px;
+}
+
+.top-banner form button:hover {
+    background: var(--darkred);
+    transition: 0.5s ease;
+}
+
+.top-banner form .mensaje-error {
+    position: absolute;
+    bottom: -40px;
+    /**/
+    /**/
+}
+
+/* seccion tarjetas */ 
+
+.seccion-tarjetas {
+    margin: 50px 0 20px;
+}
+
+.seccion-tarjetas .ciudades {
+    display: grid;
+    grid-gap: 32px 20px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.seccion-tarjetas .ciudad {
+    background: var(--color_claro);
+    color: var(--color_medio);
+    position: relative;
+    padding: 40px 10%;
+    border-radius: 20px;
+}
+
+.seccion-tarjetas .ciudad-nombre span {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.seccion-tarjetas .ciudad sup {
+    /*font-size: 12px;*/
+    font-size: 0.5em;
+}
+
+.seccion-tarjetas .ciudad-nombre sup {
+    background: var(--orange);
+    color: var(--color_claro);
+    border-radius: 20px;
+    padding: 0.2em 0.6em;
+    /*padding: 4px 10px;*/
+}
+
+.seccion-tarjetas .ciudad-temp {
+    /*font-size: 5rem;*/
+    font-size: 80px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: var(--color_fuerte);
+}
+
+.seccion-tarjetas .tempMaxMin, .humedad, .viento {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: var(--color_fuerte);
+}
+
+.seccion-tarjetas .ciudad-icon {
+    margin-top: 20px;
+    width: 100px;
+    height: 100px;
+}
+
+.seccion-tarjetas figcaption {
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+/* responsive banner */
+
+@media screen and (max-width: 700px) {
+    .top-banner form {
+        flex-direction: column;
+    }
+
+    .top-banner form button,
+    .top-banner form input {
+        width: 100%;
+    }
+
+    .top-banner form button {
+        margin: 20px 0 0 0;
+    }
+
+    .top-banner form .mensaje-error {
+        position: static;
+        max-width: none;
+        min-height: 0;
+        margin-top: 10px;
+    }
+}
+
+/* responsive seccion-tarjetas */
+
+@media screen and (max-width: 1000px) {
+    .seccion-tarjetas .ciudades {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .seccion-tarjetas .ciudades {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .seccion-tarjetas .ciudades {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
